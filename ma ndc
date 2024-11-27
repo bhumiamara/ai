@@ -1,0 +1,54 @@
+def print_solution(m, c, side):
+    # Base case: if there are no missionaries and no cannibals on the start side
+    if m == 0 and c == 0:
+        return
+    
+    # If invalid state: more cannibals than missionaries on either side
+    if m < 0 or c < 0 or m < c:
+        return
+    
+    if side == 'start':
+        # Move 2 missionaries from start to end
+        if m >= 2:
+            print(f"Move 2 missionaries from start to end")
+            print_solution(m-2, c, 'end')
+        
+        # Move 1 missionary from end to start
+        if m >= 1:
+            print(f"Move 1 missionary from end to start")
+            print_solution(m-1, c, 'start')
+        
+        # Move 2 cannibals from start to end
+        if c >= 2:
+            print(f"Move 2 cannibals from start to end")
+            print_solution(m, c-2, 'end')
+        
+        # Move 1 cannibal from end to start
+        if c >= 1:
+            print(f"Move 1 cannibal from end to start")
+            print_solution(m, c-1, 'start')
+
+    elif side == 'end':
+        # Move 2 missionaries from end to start
+        if m >= 2:
+            print(f"Move 2 missionaries from end to start")
+            print_solution(m-2, c, 'start')
+        
+        # Move 1 missionary from start to end
+        if m >= 1:
+            print(f"Move 1 missionary from start to end")
+            print_solution(m-1, c, 'end')
+        
+        # Move 2 cannibals from end to start
+        if c >= 2:
+            print(f"Move 2 cannibals from end to start")
+            print_solution(m, c-2, 'start')
+        
+        # Move 1 cannibal from start to end
+        if c >= 1:
+            print(f"Move 1 cannibal from start to end")
+            print_solution(m, c-1, 'end')
+
+# Initial call to the function with 3 missionaries and 2 cannibals on the start side
+print("Solution:")
+print_solution(3, 2, 'start')
