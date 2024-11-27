@@ -1,0 +1,9 @@
+from itertools import permutations
+
+def solve_cryptarithmetic():
+    for perm in permutations('0123456789', 8):
+        S, E, N, D, M, O, R, Y = perm
+        if int(S+E+N+D) + int(M+O+R+E) == int(M+O+N+E+Y):
+            return f"S={S}, E={E}, N={N}, D={D}, M={M}, O={O}, R={R}, Y={Y}"
+
+print(solve_cryptarithmetic())
