@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>LOGIN</title>
+        <link rel="stylesheet" href="style/login.css">
+        </head> 
+        <center>
+        <a href="index.html">
+        </a>
+        <form>
+            <label for="r1" id="username">username</label>
+            <input type="text" name="username" id="username" placeholder="username"></form><br>
+            <form>
+                <label for="r2" id="password">password</label>
+                <input type="password" name="password" id="r2"></form><br>
+            </form>
+            <a href="code.html">
+                <button type="button" value="submit">sign up</button>
+            </a>
+        </form>
+        </center>
+        </html>
