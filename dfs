@@ -1,0 +1,23 @@
+def dfs(graph, node, visited=None):
+    if visited is None:
+        visited = set()  # Initialize visited set if not provided
+
+    if node not in visited:
+        print(node, end=" ")  # Print the current node
+        visited.add(node)  # Mark it as visited
+        for neighbor in graph[node]:  # Recursively visit neighbors
+            dfs(graph, neighbor, visited)
+
+# Sample graph
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
+}
+
+# DFS traversal starting from 'A'
+print("DFS traversal:")
+dfs(graph, 'A')
